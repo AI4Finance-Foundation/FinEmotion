@@ -15,18 +15,18 @@ import string
 import spacy
 import subprocess
 import spacy.cli
+import sys
+import os
 
 try:
     nlp = spacy.load('en_core_web_sm', disable=['parser','ner'])
 except IOError:
-    print("The 'en_core_web_sm' model is not installed. Downloading now...")
-    subprocess.call(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    print("The 'en_core_web_sm' model is not installed. Downloading now, you will need to restart your venv")
+    return_code = subprocess.call([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
+    print(f'The command returned: {return_code}')
     nlp = spacy.load('en_core_web_sm', disable=['parser','ner'])
 
 nltk.download('vader_lexicon')
-#nltk.download('stopwords')
-#nltk.download('punkt')
-#nltk.download('wordnet')
 
 def removing_shortcuts(text):
     full_words = []
@@ -190,12 +190,17 @@ def get_sentiment(input):
 def get_emotion(input, sentiment=''):
     if sentiment == '':
         sentiment = get_sentiment(input)
-    print(sentiment)
+    #print(sentiment)
     text = cleaning(input).split()
-    print(text)
+    #print(text)
     
     emotion_values = []
-    with open('data/all_en_merged.json','r') as f:
+    # Get the directory that contains the current file
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    # Construct a path to all_en_merged.json relative to the current file
+    data_path = os.path.join(current_dir, 'data', 'all_en_merged.json')
+
+    with open(data_path,'r') as f:
         data = json.load(f)
 
     emotions = {"fear": 0.0, "anger": 0.0, "trust": 0.0, "surprise": 0.0, "sadness": 0.0, "disgust": 0.0, "joy": 0.0, "anticipation": 0.0}

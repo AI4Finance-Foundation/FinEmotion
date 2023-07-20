@@ -29,7 +29,8 @@ Here's how you can use these algorithms to detect emotions in financial texts:
 ### get_emotion function
 
 ```python
-import emotion
+!python -m spacy download en_core_web_sm
+from finemotion import emotion
 
 # your input text
 input = "The stock market is extremely volatile today!"
@@ -40,6 +41,9 @@ sentiment = emotion.get_sentiment(input)
 # get the emotion
 emotion = emotion.get_emotion(input, sentiment)
 print(f'Emotion: {emotion}')
+
+This will output:
+Emotion: {'fear': 1.0, 'anger': 0.0, 'trust': 0.0, 'surprise': 0.0, 'sadness': 0.0, 'disgust': 0.0, 'joy': 0.0, 'anticipation': 0.0}
 ```
 
 ### get_mixed_emotion function

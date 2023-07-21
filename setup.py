@@ -5,9 +5,12 @@ import nltk
 import spacy
 import subprocess
 import sys
+import os
 
 def readme():
-    with open('README.md', encoding="utf8") as f:
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    readme_path = os.path.join(current_dir, 'readme.md')
+    with open(readme_path, encoding="utf8") as f:
         README = f.read()
     return README
 

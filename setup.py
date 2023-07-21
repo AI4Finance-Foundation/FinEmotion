@@ -18,7 +18,11 @@ class PostDevelopCommand(develop):
         try:
             spacy.load('en_core_web_sm')
         except IOError:
-            subprocess.call([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
+            subprocess.call([sys.executable, 
+                             "-m", 
+                             "spacy", 
+                             "download", 
+                             "en_core_web_sm"])
         develop.run(self)
 
 class PostInstallCommand(install):
@@ -28,13 +32,19 @@ class PostInstallCommand(install):
         try:
             spacy.load('en_core_web_sm')
         except IOError:
-            subprocess.call([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
+            subprocess.call([sys.executable, 
+                             "-m", 
+                             "spacy", 
+                             "download", 
+                             "en_core_web_sm"])
         install.run(self)
 
 setup(
     name='finemotion',
     version='0.1',
-    description='Our emotional annotation algorithm is built upon the foundation laid by the Text2Emotion project, with a series of key enhancements aimed at optimizing its functionality for financial news analysis',
+    description='Our emotional annotation algorithm is built upon the foundation ' \
+        'laid by the Text2Emotion project, with a series of key enhancements ' \
+        'aimed at optimizing its functionality for financial news analysis',
     long_description=readme(),
     long_description_content_type="text/markdown",
     packages=find_packages(),

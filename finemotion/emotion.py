@@ -6,7 +6,6 @@
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import re
-#import emoji
 import json
 from pathlib import Path
 import unicodedata

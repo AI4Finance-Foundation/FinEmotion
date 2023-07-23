@@ -44,7 +44,7 @@ class PostInstallCommand(install):
 
 setup(
     name='finemotion',
-    version='0.1',
+    version='1.0.0',
     description='Our emotional annotation algorithm is built upon the foundation ' \
         'laid by the Text2Emotion project, with a series of key enhancements ' \
         'aimed at optimizing its functionality for financial news analysis',

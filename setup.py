@@ -53,7 +53,7 @@ setup(
     packages=find_packages(),
     author="AliceNN-ucdenver",
     author_email="shawn.mccarthy@ucdenver.edu",
-    url="https://github.com/AliceNN-ucdenver/Fin-Emotion",
+    url="https://github.com/AI4Finance-Foundation/Fin-Emotion",
     license="MIT",
     install_requires=[
         'spacy',

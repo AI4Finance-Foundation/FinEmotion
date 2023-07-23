@@ -2,7 +2,7 @@
 
 Our emotional annotation algorithm is built upon the foundation laid by the Text2Emotion project, with a series of key enhancements aimed at optimizing its functionality for financial news analysis. We've refined the core algorithm to account for financial terms, integrated a more robust language corpus inclusive of additional words, added support for multi-word phrases, and incorporated an expanded emotional dialect covering a total of 30 emotions.
 
-![Updated Corpus Counts](/images/corpus.png)
+![Updated Corpus Counts](https://github.com/AI4Finance-Foundation/Fin-Emotion/raw/main/images/corpus.png)
 
 While Text2Emotion's original algorithm worked with five primary emotions, our iteration employs the eight emotions outlined in Plutchik’s model. As a result, we needed to normalize the Text2Emotion embedded corpus. Moreover, we extended our emotional repertoire to cover an additional 22 mixed emotions and improved our utilization of sentiment to further emphasize our calculations.
 
@@ -10,7 +10,7 @@ While Text2Emotion's original algorithm worked with five primary emotions, our i
 
 Our refined algorithm leverages the combined power of three datasets. The first is Text2Emotion, which we have normalized to correspond with the NRC dataset. The second is the NRC Emotion Lexicon dataset itself, and the third addition is a glossary of domain-specific (financial) phrases. The integration of these resources results in a comprehensive corpus used to process financial news articles.
 
-![Updated Data Cleaning Options](/images/data_cleaning.png)
+![Updated Data Cleaning Options](https://github.com/AI4Finance-Foundation/Fin-Emotion/raw/main/images/data_cleaning.png)
 
 ## Enhanced Algorithms
 
@@ -18,12 +18,12 @@ Our upgraded algorithm, "get_emotion", creates an emotion vector for news articl
 
 The newly introduced algorithm, "get_mixed_emotion", can handle emotional mixing according to Plutchik's model, delivering the top emotion or a mixed emotion for a given article. The mixed emotion is calculated if the top two emotions comprise 50% of the emotional calculation, and the difference between these two is within 15%. This method allows for more nuanced and accurate emotional analysis.
 
-![Analyzed News Articles](/images/news.png)
+![Analyzed News Articles](https://github.com/AI4Finance-Foundation/Fin-Emotion/raw/main/images/news.png)
 
 ## Usage
 
 Here's how you can use these algorithms to detect emotions in financial texts:
-![Plutchik's Emotion Mixing](/images/emotion_mixing.png)
+![Plutchik's Emotion Mixing](https://github.com/AI4Finance-Foundation/Fin-Emotion/raw/main/images/emotion_mixing.png)
 
 
 ### get_emotion function
